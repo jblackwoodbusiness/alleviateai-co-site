@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlleviateAI - AI Automation for Small Businesses</title>
+  <meta name="description" content="AlleviateAI helps small and medium-sized businesses reclaim 10+ hours every week, cut costs, and increase revenue — all through intelligent AI automations.">
+  <meta name="keywords" content="AI automation for small business, AI chatbot for clinics, lead generation automation, AI receptionist, AI automation services">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    :root {
+      --blue-50: #eff6ff;
+      --blue-100: #dbeafe;
+      --blue-600: #2563eb;
+      --blue-800: #1e40af;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background-color: #ffffff;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+    
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(to right, #2563eb, #1e40af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    
+    .nav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: #2563eb;
+    }
+    
+    .nav-link.active {
+      color: #2563eb;
+      border-bottom: 2px solid #2563eb;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 120px 0 80px;
+      background: linear-gradient(to bottom right, var(--blue-50), #ffffff, var(--blue-100));
+    }
+    
+    .hero-container {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    
+    .hero-content {
+      flex: 1;
+    }
+    
+    .hero-title {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    
+    .hero-title span {
+      display: block;
+    }
+    
+    .hero-title .gradient {
+      background: linear-gradient(to right, #2563eb, #1e40af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero-text {
+      font-size: 20px;
+      color: #6b7280;
+      margin-bottom: 32px;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(to right, #2563eb, #1e40af);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+    }
+    
+    .btn-secondary {
+      border: 2px solid #2563eb;
+      color: #2563eb;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background: var(--blue-100);
+    }
+    
+    .hero-features {
+      flex: 1;
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transform: rotate(2deg);
+      transition: transform 0.5s ease;
+    }
+    
+    .hero-features:hover {
+      transform: rotate(0);
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    
+    .feature-dot {
+      width: 12px;
+      height: 12px;
+      background: #2563eb;
+      border-radius: 50%;
+    }
+    
+    .feature-text {
+      font-size: 16px;
+      color: var(--gray-700);
+    }
+    
+    /* Who We Help */
+    .who-we-help {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #6b7280;
+      max-width: 800px;
+      margin: 0 auto 48px;
+    }
+    
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    
+    .help-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .help-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .help-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--blue-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    
+    .help-icon svg {
+      width: 24px;
+      height: 24px;
+      color: #2563eb;
+    }
+    
+    .help-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .help-text {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    
+    /* Services */
+    .services {
+      padding: 80px 0;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--gray-100);
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(to right, #2563eb, #1e40af);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+    
+    .service-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .service-text {
+      font-size: 16px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    
+    /* Results */
+    .results {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+    
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+    
+    .result-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result-image {
+      width: 100%;
+      height: 192px;
+      object-fit: cover;
+    }
+    
+    .result-content {
+      padding: 24px;
+    }
+    
+    .result-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .result-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .result-stat {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    
+    .result-stat strong {
+      color: #059669;
+      font-weight: 600;
+    }
+    
+    .results-stats {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 16px;
+      color: #6b7280;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 80px 0;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--gray-100);
+    }
+    
+    .testimonial-rating {
+      display: flex;
+      margin-bottom: 24px;
+    }
+    
+    .testimonial-rating svg {
+      width: 20px;
+      height: 20px;
+      color: #fbbf24;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      color: #6b7280;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+    }
+    
+    .testimonial-role {
+      font-size: 14px;
+      color: #6b7280;
+    }
+    
+    /* About */
+    .about {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+    
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .about-content h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    
+    .about-text {
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .about-feature-dot {
+      width: 8px;
+      height: 8px;
+      background: #2563eb;
+      border-radius: 50%;
+      margin-top: 8px;
+    }
+    
+    .about-feature-text strong {
+      font-weight: 600;
+    }
+    
+    .about-quote {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .about-logo {
+      margin-bottom: 24px;
+    }
+    
+    .about-logo img {
+      height: 64px;
+    }
+    
+    .about-quote-text {
+      font-style: italic;
+      color: #6b7280;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    
+    .about-author {
+      font-weight: 600;
+    }
+    
+    /* Contact */
+    .contact {
+      padding: 80px 0;
+    }
+    
+    .contact-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .contact-form {
+      background: white;
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      margin-bottom: 8px;
+    }
+    
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .form-input::placeholder, 
+    .form-select::placeholder, 
+    .form-textarea::placeholder {
+      font-family: 'Inter', sans-serif;
+      color: #9ca3af;
+      font-weight: 400;
+    }
+    
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(to right, #2563eb, #1e40af);
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+    }
+    
+    .form-success {
+      text-align: center;
+      padding: 40px;
+    }
+    
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: #dcfce7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    
+    .success-icon svg {
+      width: 32px;
+      height: 32px;
+      color: #059669;
+    }
+    
+    .success-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .success-text {
+      color: #6b7280;
+    }
+    
+    .form-privacy {
+      text-align: center;
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 32px;
+    }
+    
+    .form-privacy a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    footer {
+      background: #111827;
+      color: white;
+      padding: 48px 0 24px;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(to right, #3b82f6, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    
+    .footer-text {
+      color: #9ca3af;
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+    
+    .footer-links h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: white;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+    
+    .footer-links a {
+      color: #9ca3af;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .social-link {
+      color: #9ca3af;
+      transition: color 0.3s ease;
+    }
+    
+    .social-link:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #374151;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .hero-cta {
+        justify-content: center;
+      }
+      
+      .help-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .about-quote {
+        order: -1;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 36px;
+      }
+      
+      .hero-text {
+        font-size: 18px;
+      }
+      
+      .section-title {
+        font-size: 32px;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 24px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .nav-link {
+        padding: 12px 0;
+        font-size: 16px;
+      }
+      
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-form {
+        padding: 32px;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 32px;
+      }
+      
+      .btn-primary, .btn-secondary {
+        width: 100%;
+      }
+      
+      .hero-features {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">AlleviateAI</div>
+      <button class="mobile-menu-btn">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#results" class="nav-link">Case Studies</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span>Stop Losing Leads</span>
+          <span class="gradient">Start Growing Automatically</span>
+        </h1>
+        <p class="hero-text">
+          AlleviateAI helps small and medium-sized businesses reclaim 
+          10+ hours every week, cut costs, and increase revenue — all 
+          through intelligent AI automations.
+        </p>
+        <div class="hero-cta">
+          <a href="https://calendly.com/jblackwood-business/30min" target="_blank" class="btn-primary">
+            Book a Free Automation Audit
+          </a>
+          <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+            See How It Works
+          </button>
+        </div>
+        <p style="margin-top: 16px; color: #6b7280; font-size: 14px;">
+          Trusted by growing businesses • 30-day results or your money back
+        </p>
+      </div>
+      <div class="hero-features">
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span class="feature-text">24/7 AI Receptionist</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span class="feature-text">Instant Lead Capture</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span class="feature-text">Automated Follow-Ups</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span class="feature-text">Booking & Scheduling</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span class="feature-text">Revenue-Boosting Campaigns</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Help -->
+  <section class="who-we-help">
+    <div class="container">
+      <h2 class="section-title">Who We Help</h2>
+      <p class="section-subtitle">
+        AlleviateAI is built for small and medium businesses that are
+        losing leads, wasting time on repetitive tasks, and missing growth
+        opportunities.
+      </p>
+      <div class="help-grid">
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Medical Clinics</h3>
+          <p class="help-text">Automate patient calls, appointment booking, and follow-ups to reduce no-shows and increase patient volume.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12a8 8 0 11-16 0 8 8 0 0116 0z"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Dental Clinics</h3>
+          <p class="help-text">Streamline appointment scheduling, patient reminders, and lead qualification with AI assistance.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Massage Therapy</h3>
+          <p class="help-text">Handle booking requests, send reminders, and qualify leads 24/7 with intelligent automation.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Chiropractic Offices</h3>
+          <p class="help-text">Reduce no-shows and increase patient retention with automated appointment management.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Barbershops</h3>
+          <p class="help-text">Automate booking, reminders, and follow-ups to maximize chair time and customer retention.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Hair Salons</h3>
+          <p class="help-text">Fill appointment gaps, reduce no-shows, and grow your client base with AI-powered booking.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Nail Salons</h3>
+          <p class="help-text">Streamline scheduling, send automated reminders, and re-engage past clients with AI.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Home Service Businesses</h3>
+          <p class="help-text">Capture every lead from Google and Facebook, qualify them instantly, and book more jobs.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m-7 0a2 2 0 012-2h2a2 2 0 012 2v2m-6 0a2 2 0 012-2h2a2 2 0 012 2v2m-6 0a2 2 0 012-2h2a2 2 0 012 2v2m-6 0a2 2 0 012-2h2a2 2 0 012 2v2m-6 0a2 2 0 012-2h2a2 2 0 012 2v2"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Real Estate Agents</h3>
+          <p class="help-text">Automate lead qualification, property tours, and client communication to close more deals faster.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Sales Teams</h3>
+          <p class="help-text">Streamline prospect outreach, follow-ups, and appointment setting to increase conversion rates.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10a2 2 0 002-2V8a2 2 0 00-2-2H7a2 2 0 00-2 2v5m0 0a2 2 0 002 2h6a2 2 0 002-2m0 0V8a2 2 0 00-2-2H7a2 2 0 00-2 2v5m0 0a2 2 0 002 2h6a2 2 0 002-2"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">E-commerce Stores</h3>
+          <p class="help-text">Automate customer support, order tracking, and post-purchase follow-ups to improve retention.</p>
+        </div>
+        <div class="help-card">
+          <div class="help-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6"></path>
+            </svg>
+          </div>
+          <h3 class="help-title">Professional Services</h3>
+          <p class="help-text">Eliminate manual quoting, scheduling, and client follow-up so you can focus on delivering great service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">AI Automation Services</h2>
+      <p class="section-subtitle">
+        We build custom AI systems that work around the clock to save your
+        team time and grow your revenue — automatically.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">AI Chatbots & Receptionists</h3>
+          <p class="service-text">24/7 intelligent chat and call handling that books appointments, qualifies leads, and answers FAQs — just like a human.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Lead Generation Automation</h3>
+          <p class="service-text">Capture, qualify, and nurture leads across Facebook, Google, and your website — no more missed opportunities.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Omni-Channel Outreach</h3>
+          <p class="service-text">Automated SMS, email, social media, and phone follow-ups that convert leads into paying customers with personalized messaging.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Cold Email Outreach</h3>
+          <p class="service-text">Custom AI-powered cold email campaigns that generate high-quality leads and drive conversions with targeted messaging.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Appointment & Booking Automation</h3>
+          <p class="service-text">Seamless scheduling that reduces no-shows with smart reminders and self-booking capabilities.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Database Reactivation</h3>
+          <p class="service-text">Re-engage cold leads and past customers with AI-driven campaigns that bring revenue back to life.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Custom AI Builds</h3>
+          <p class="service-text">Tailored AI solutions designed specifically for your business needs, processes, and goals.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="service-title">Quote & Proposal Automation</h3>
+          <p class="service-text">Generate and send accurate quotes instantly — no more manual back-and-forth or lost deals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="results">
+    <div class="container">
+      <h2 class="section-title">Real Results for Real Businesses</h2>
+      <p class="section-subtitle">
+        See how AlleviateAI has helped small and medium-sized businesses save time, reduce
+        overhead, and dramatically increase revenue.
+      </p>
+      <div class="results-grid">
+        <div class="result-card">
+          <img src="https://placehold.co/400x250/00286a/ffffff?text=Dental+Clinic" alt="Dental Clinic" class="result-image">
+          <div class="result-content">
+            <h3 class="result-title">Dental Clinic</h3>
+            <div class="result-stats">
+              <div class="result-stat">
+                <span>Result:</span>
+                <strong>37% Increase in Bookings</strong>
+              </div>
+              <div class="result-stat">
+                <span>Time Saved:</span>
+                <strong>12+ hours/week</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="result-card">
+          <img src="https://placehold.co/400x250/00286a/ffffff?text=HVAC+Service" alt="HVAC Company" class="result-image">
+          <div class="result-content">
+            <h3 class="result-title">HVAC Company</h3>
+            <div class="result-stats">
+              <div class="result-stat">
+                <span>Result:</span>
+                <strong>3× More Inquiries</strong>
+              </div>
+              <div class="result-stat">
+                <span>Time Saved:</span>
+                <strong>15 hours/week</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="result-card">
+          <img src="https://placehold.co/400x250/00286a/ffffff?text=Chiropractor" alt="Chiropractic Office" class="result-image">
+          <div class="result-content">
+            <h3 class="result-title">Chiropractic Office</h3>
+            <div class="result-stats">
+              <div class="result-stat">
+                <span>Result:</span>
+                <strong>52% Fewer No-Shows</strong>
+              </div>
+              <div class="result-stat">
+                <span>Time Saved:</span>
+                <strong>8 hours/week</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="results-stats">
+        <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+          <div class="stat-item">
+            <div class="stat-number" style="color: #2563eb;">50+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" style="color: #059669;">10+</div>
+            <div class="stat-label">Hours Saved Weekly</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" style="color: #9333ea;">37%</div>
+            <div class="stat-label">Avg. Revenue Increase</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+          </div>
+          <p class="testimonial-text">"AlleviateAI cut our admin time in half and brought in 37% more patients. Their AI system handles calls, books appointments, and follows up — it's like having an extra staff member working 24/7."</p>
+          <div class="testimonial-author">Dr. Sarah Chen</div>
+          <div class="testimonial-role">Owner, Wellness Dental</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+          </div>
+          <p class="testimonial-text">"We were drowning in missed calls and unqualified leads. AlleviateAI's automation captured every lead and booked more jobs than our team ever did manually."</p>
+          <div class="testimonial-author">James Rodriguez</div>
+          <div class="testimonial-role">CEO, Prime HVAC</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+          </div>
+          <p class="testimonial-text">"The AI receptionist answers calls after hours, sends reminders, and even handles rescheduling. Our no-show rate dropped dramatically — best investment we've made."</p>
+          <div class="testimonial-author">Linda Park</div>
+          <div class="testimonial-role">Office Manager, SpineCare Chiro</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="about">
+    <div class="container about-container">
+      <div class="about-content">
+        <h2>Why Choose AlleviateAI?</h2>
+        <p class="about-text">
+          We're not just another AI tool. We're a team of automation
+          experts dedicated to helping small and medium-sized businesses compete with
+          enterprise-level efficiency.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-dot"></div>
+            <div class="about-feature-text"><strong>Custom-Built Solutions:</strong> No off-the-shelf bots. We build AI systems tailored to your business.</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-dot"></div>
+            <div class="about-feature-text"><strong>Zero Tech Hassle:</strong> We handle setup, training, and optimization — you just enjoy the results.</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-dot"></div>
+            <div class="about-feature-text"><strong>Proven Results:</strong> 30-day guarantee or your money back. We only succeed when you do.</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-dot"></div>
+            <div class="about-feature-text"><strong>Human Oversight:</strong> Our experts monitor your AI to ensure it's performing at its best.</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-quote">
+        <div class="about-logo">
+          <img src="https://placehold.co/400x100/00286a/ffffff?text=AlleviateAI" alt="AlleviateAI Logo">
+        </div>
+        <p class="about-quote-text">
+          "We founded AlleviateAI after seeing how much time small
+          and medium-sized businesses waste on repetitive tasks that AI could handle
+          effortlessly. Our mission is simple: help SMBs work smarter, not
+          harder."
+        </p>
+        <div class="about-author">— The AlleviateAI Team</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container contact-container">
+      <h2 class="section-title">Ready to Alleviate Your Workload?</h2>
+      <p class="section-subtitle">
+        Book a free 30-minute automation audit and discover exactly how
+        much time and money we can save your business.
+      </p>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="businessName" class="form-label">Business Name</label>
+            <input type="text" id="businessName" name="businessName" class="form-input" placeholder="Your company" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+          </div>
+          <div class="form-group">
+            <label for="businessType" class="form-label">Business Type</label>
+            <select id="businessType" name="businessType" class="form-select" required>
+              <option value="">Select your industry</option>
+              <option value="Medical Clinic">Medical Clinic</option>
+              <option value="Dental Clinic">Dental Clinic</option>
+              <option value="Massage Therapy">Massage Therapy</option>
+              <option value="Chiropractic Office">Chiropractic Office</option>
+              <option value="Barbershop">Barbershop</option>
+              <option value="Hair Salon">Hair Salon</option>
+              <option value="Nail Salon">Nail Salon</option>
+              <option value="Home Services">Home Services (HVAC, Plumbing, etc.)</option>
+              <option value="Real Estate">Real Estate</option>
+              <option value="Sales Teams">Sales Teams</option>
+              <option value="E-commerce Store">E-commerce Store</option>
+              <option value="Professional Services">Professional Services</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="painpoint" class="form-label">What painpoint, hurdle, or headache are you trying to overcome?</label>
+            <textarea id="painpoint" name="painpoint" class="form-textarea" placeholder="Describe the specific challenge you're facing..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="automation" class="form-label">What would you like to automate?</label>
+            <textarea id="automation" name="automation" class="form-textarea" placeholder="Describe the tasks or processes you'd like to automate..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div id="successMessage" style="display: none;" class="form-success">
+          <div class="success-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="success-title">Thank You!</h3>
+          <p class="success-text">
+            Your information has been sent successfully. We'll be in touch within 24 hours to schedule your free automation audit.
+          </p>
+        </div>
+      </div>
+      <p class="form-privacy">
+        By submitting this form, you agree to our <a href="#">Privacy Policy</a> and consent to be contacted by AlleviateAI.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-about">
+        <div class="footer-logo">AlleviateAI</div>
+        <p class="footer-text">
+          Helping small and medium-sized businesses save time and increase revenue with
+          intelligent AI automation — so you can focus on what matters
+          most.
+        </p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/alleviateai/about/?viewAsMember=true" target="_blank" class="social-link">LinkedIn</a>
+          <a href="https://www.instagram.com/alleviateai.solutions/" target="_blank" class="social-link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services" class="footer-link">AI Automation Services</a></li>
+          <li><a href="#results" class="footer-link">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about" class="footer-link">About Us</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+          <li><a href="mailto:john@alleviateai.co?subject=Contact from AlleviateAI Website&body=Hello, I would like to learn more about your AI automation services." class="footer-link">Email Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 AlleviateAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '6884e81b19b0437ca4cf1677' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            voice: {
+              url: "https://runtime-api.voiceflow.com"
+            }
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+    
+    // Smooth scrolling for navigation links
+    function scrollToSection(elementId) {
+      const element = document.getElementById(elementId);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    }
+    
+    // Add click event listeners to all navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href').substring(1);
+        if (targetId) {
+          scrollToSection(targetId);
+          
+          // Close mobile menu if open
+          if (navLinks.classList.contains('show')) {
+            navLinks.classList.remove('show');
+          }
+        }
+      });
+    });
+    
+    // Active nav link highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinksArray = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinksArray.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+    
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // In a real implementation, you would send the form data to your server
+      // For now, we'll just show the success message
+      contactForm.style.display = 'none';
+      successMessage.style.display = 'block';
+      
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        contactForm.reset();
+        contactForm.style.display = 'block';
+        successMessage.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
