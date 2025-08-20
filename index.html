@@ -1315,52 +1315,68 @@
         much time and money we can save your business.
       </p>
       <div class="contact-form">
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="fullName" class="form-label">Full Name</label>
-            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-            <label for="businessName" class="form-label">Business Name</label>
-            <input type="text" id="businessName" name="businessName" class="form-input" placeholder="Your company" required>
-          </div>
-          <div class="form-group">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" required>
-          </div>
-          <div class="form-group">
-            <label for="businessType" class="form-label">Business Type</label>
-            <select id="businessType" name="businessType" class="form-select" required>
-              <option value="">Select your industry</option>
-              <option value="Medical Clinic">Medical Clinic</option>
-              <option value="Dental Clinic">Dental Clinic</option>
-              <option value="Massage Therapy">Massage Therapy</option>
-              <option value="Chiropractic Office">Chiropractic Office</option>
-              <option value="Barbershop">Barbershop</option>
-              <option value="Hair Salon">Hair Salon</option>
-              <option value="Nail Salon">Nail Salon</option>
-              <option value="Home Services">Home Services (HVAC, Plumbing, etc.)</option>
-              <option value="Real Estate">Real Estate</option>
-              <option value="Sales Teams">Sales Teams</option>
-              <option value="E-commerce Store">E-commerce Store</option>
-              <option value="Professional Services">Professional Services</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="painpoint" class="form-label">What painpoint, hurdle, or headache are you trying to overcome?</label>
-            <textarea id="painpoint" name="painpoint" class="form-textarea" placeholder="Describe the specific challenge you're facing..." required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="automation" class="form-label">What would you like to automate?</label>
-            <textarea id="automation" name="automation" class="form-textarea" placeholder="Describe the tasks or processes you'd like to automate..." required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Submit</button>
-        </form>
+        <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <!-- Hidden input required by Netlify -->
+  <input type="hidden" name="form-name" value="contact">
+  
+  <!-- Honeypot field to catch bots (hidden from users) -->
+  <p style="display:none">
+    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+  </p>
+
+  <div class="form-group">
+    <label for="fullName" class="form-label">Full Name</label>
+    <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Your name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="businessName" class="form-label">Business Name</label>
+    <input type="text" id="businessName" name="businessName" class="form-input" placeholder="Your company" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email" class="form-label">Email Address</label>
+    <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+  </div>
+
+  <div class="form-group">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+  </div>
+
+  <div class="form-group">
+    <label for="businessType" class="form-label">Business Type</label>
+    <select id="businessType" name="businessType" class="form-select" required>
+      <option value="">Select your industry</option>
+      <option value="Medical Clinic">Medical Clinic</option>
+      <option value="Dental Clinic">Dental Clinic</option>
+      <option value="Massage Therapy">Massage Therapy</option>
+      <option value="Chiropractic Office">Chiropractic Office</option>
+      <option value="Barbershop">Barbershop</option>
+      <option value="Hair Salon">Hair Salon</option>
+      <option value="Nail Salon">Nail Salon</option>
+      <option value="Home Services">Home Services (HVAC, Plumbing, etc.)</option>
+      <option value="Real Estate">Real Estate</option>
+      <option value="Sales Teams">Sales Teams</option>
+      <option value="E-commerce Store">E-commerce Store</option>
+      <option value="Professional Services">Professional Services</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="painpoint" class="form-label">What painpoint, hurdle, or headache are you trying to overcome?</label>
+    <textarea id="painpoint" name="painpoint" class="form-textarea" placeholder="Describe the specific challenge you're facing..." required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="automation" class="form-label">What would you like to automate?</label>
+    <textarea id="automation" name="automation" class="form-textarea" placeholder="Describe the tasks or processes you'd like to automate..." required></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
         <div id="successMessage" style="display: none;" class="form-success">
           <div class="success-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
